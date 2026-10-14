@@ -194,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderMemories();
   setupNebulizerEvents();
   registerServiceWorker();
+  requestPersistentStorage();
 });
 
 // Navigation Handling
@@ -554,7 +555,33 @@ function renderMedsHistory() {
       </div>
       <span style="color: var(--primary); font-weight: 600;">${m.time}</span>
     </div>
-  `).join('');
+  `).join('') + `
+    <div style="text-align: right; margin-top: 8px;">
+      <button class="btn btn-outline" onclick="shareHealthReport()" style="padding: 5px 12px; font-size: 0.78rem;">
+        📤 Share Log (WhatsApp / Doctor)
+      </button>
+    </div>
+  `;
+}
+
+function shareHealthReport() {
+  const allMeds = [
+    ...(state.healthData.khush.lastMeds || []),
+    ...(state.healthData.khwaish.lastMeds || [])
+  ].sort((a, b) => b.id - a.id).slice(0, 10);
+
+  if (allMeds.length === 0) {
+    alert('No medicine doses logged to share yet.');
+    return;
+  }
+
+  let text = "🩺 *Khush & Khwaish Medicine Log*\n\n";
+  allMeds.forEach(m => {
+    text += `• *${m.twin}*: ${m.name} (${m.dose}) at ${m.time} on ${m.date}\n`;
+  });
+
+  const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
 }
 
 // Interactive Nebulizer Fun Station
@@ -786,4 +813,60 @@ function registerServiceWorker() {
       .then(() => console.log('MamaNest SW active'))
       .catch(e => console.log('SW registration note', e));
   }
+}
+
+// Request Persistent Browser Storage (Prevents device from auto-deleting data)
+function requestPersistentStorage() {
+  if (navigator.storage && navigator.storage.persist) {
+    navigator.storage.persist().then(persistent => {
+      console.log('MamaNest storage persistence:', persistent ? 'Granted' : 'Default');
+    });
+  }
+}
+
+// 1-Click Backup Export
+function exportHealthBackup() {
+  const data = {
+    appName: 'MamaNest',
+    twins: 'Khush & Khwaish',
+    health: state.healthData,
+    memories: state.memories,
+    exportedAt: new Date().toLocaleString()
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `MamaNest-HealthBackup-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// 1-Click Backup Restore
+function importHealthBackup() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json';
+  input.onchange = e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = evt => {
+      try {
+        const imported = JSON.parse(evt.target.result);
+        if (imported.health) state.healthData = imported.health;
+        if (imported.memories) state.memories = imported.memories;
+        saveStoredData();
+        renderChecklist();
+        renderMedsHistory();
+        renderMemories();
+        if (window.mamaAudio) mamaAudio.playSuccessChime();
+        alert('✅ Health records & memories restored successfully!');
+      } catch (err) {
+        alert('Invalid backup file. Please select a valid MamaNest backup.');
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
 }

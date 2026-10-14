@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MamaNest • For Mama, Khush & Khwaish</title>
-  <link rel="manifest" href="manifest.json?v=2.2">
+  <link rel="manifest" href="manifest.json?v=2.3">
   <meta name="theme-color" content="#E07A5F">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="stylesheet" href="styles.css?v=2.2">
+  <link rel="stylesheet" href="styles.css?v=2.3">
 
   <!-- Core Embedded Styles (Ensures 100% perfect UI even if browser caches external CSS) -->
   <style>
@@ -418,6 +418,19 @@
               <h5 style="font-size: 0.76rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Recent History:</h5>
               <div id="medsHistoryList"></div>
             </div>
+
+            <!-- Permanent Backup Controls -->
+            <div style="display: flex; gap: 8px; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1); flex-wrap: wrap;">
+              <span style="font-size: 0.72rem; color: var(--text-muted);">🔒 Auto-saved safely to your device</span>
+              <div style="display: flex; gap: 6px;">
+                <button class="btn btn-outline" onclick="exportHealthBackup()" style="padding: 4px 10px; font-size: 0.72rem;">
+                  💾 Backup Data
+                </button>
+                <button class="btn btn-outline" onclick="importHealthBackup()" style="padding: 4px 10px; font-size: 0.72rem;">
+                  📥 Restore
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -626,7 +639,7 @@
   </nav>
 
   <!-- Script Includes -->
-  <script src="audio.js?v=2.2"></script>
-  <script src="app.js?v=2.2"></script>
+  <script src="audio.js?v=2.3"></script>
+  <script src="app.js?v=2.3"></script>
 </body>
 </html>
