@@ -5,7 +5,7 @@
 
 // State Management
 const state = {
-  activeTab: 'sanctuary',
+  activeTab: 'calm',
   activeTwin: 'both', // 'khush', 'khwaish', 'both'
   breatheActive: false,
   breatheTimer: null,
@@ -216,6 +216,22 @@ function switchTab(tabId) {
     sec.classList.toggle('active', sec.id === `section-${tabId}`);
   });
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function switchSubTab(sectionId, subId) {
+  const section = document.getElementById(`section-${sectionId}`);
+  if (!section) return;
+
+  // Toggle segmented buttons
+  section.querySelectorAll('.segmented-btn').forEach(btn => {
+    const isTarget = btn.getAttribute('onclick').includes(`'${subId}'`);
+    btn.classList.toggle('active', isTarget);
+  });
+
+  // Toggle sub-panels
+  section.querySelectorAll('.sub-panel').forEach(panel => {
+    panel.classList.toggle('active', panel.id === `sub-${sectionId}-${subId}`);
+  });
 }
 
 // SOS Calm & Breathing Modal

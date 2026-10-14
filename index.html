@@ -17,388 +17,390 @@
       <div class="brand-icon">🕊️</div>
       <div class="brand-titles">
         <h1>MamaNest</h1>
-        <p>For Mama, Khush & Khwaish • With Love from Khushal</p>
+        <p>Mama, Khush & Khwaish • With Love from Khushal</p>
       </div>
     </div>
-    <div class="twin-badges">
+    <div class="header-right">
       <span class="badge-twin badge-khush">👦 Khush</span>
       <span class="badge-twin badge-khwaish">👧 Khwaish</span>
+      <!-- Instant 1-Tap SOS Button in Header (Never covers bottom buttons!) -->
+      <button class="header-sos-btn" onclick="openBreatheModal()" aria-label="Emergency Calm SOS">
+        <span>🧘‍♀️</span>
+        <span>SOS Calm</span>
+      </button>
     </div>
   </header>
-
-  <!-- Floating Emergency Calm SOS Button -->
-  <button class="sos-floating-btn" onclick="openBreatheModal()" aria-label="Emergency Calm SOS">
-    <span>🧘‍♀️</span>
-    <span>SOS: Take a Breath</span>
-  </button>
 
   <!-- Main Container -->
   <main class="app-container">
 
     <!-- Lucky Mama & Birthday Reminder Card -->
-    <div class="compassion-banner" style="background: linear-gradient(135deg, #FFF3EB, #FDF0E6); border: 1.5px solid #F4A261;">
+    <div class="compassion-banner">
       <div class="banner-icon">🎂</div>
       <div class="banner-content">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
-          <h3 style="color: var(--primary-dark); font-size: 1.05rem;">Khush & Khwaish • Born January 2, 2025</h3>
-          <span style="background: #E07A5F; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">
-            1 Year, 9 Months Old Today ✨
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
+          <h3>Khush & Khwaish • Born January 2, 2025</h3>
+          <span style="background: #E07A5F; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 700;">
+            1 Year, 9 Months Old ✨
           </span>
         </div>
-        <p style="margin-top: 4px; font-size: 0.88rem; color: #4A4E69;">
-          Look at how tiny and soft they are. In the whole wide universe, they chose <strong>you</strong> as their mama. They will only be this little for a fleeting moment. You are so deeply blessed! ❤️
+        <p>
+          In the whole wide universe, they chose <strong>you</strong> as their mama. They will only be this little for a fleeting moment. You are so deeply blessed! ❤️
         </p>
       </div>
     </div>
 
     <!-- ============================================== -->
-    <!-- TAB 1: MAMA'S SANCTUARY & SOS RESET -->
+    <!-- TAB 1: CALM (Sanctuary + Pamper/Cry) -->
     <!-- ============================================== -->
-    <section id="section-sanctuary" class="tab-section active">
+    <section id="section-calm" class="tab-section active">
       <div class="card">
-        <h2 class="card-title">🌸 Mama’s Emergency Nervous System Reset</h2>
-        <p class="card-subtitle">When your patience is zero and you feel about to yell or blame them.</p>
-
-        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
-          <button class="btn btn-primary" onclick="openBreatheModal()" style="flex: 1; min-width: 200px;">
-            🫁 Open 4-7-8 Breathing Circle
-          </button>
-          <button class="btn btn-secondary" onclick="mamaAudio.playSingingBowl(240, 5)">
-            🔔 Play Calming Singing Bowl
-          </button>
+        <!-- Sub-Segment Controls -->
+        <div class="segmented-control">
+          <button class="segmented-btn active" onclick="switchSubTab('calm', 'reset')">🌸 1-Tap Reset</button>
+          <button class="segmented-btn" onclick="switchSubTab('calm', 'crying')">😭 Why They Cry & Pamper</button>
         </div>
 
-        <!-- 30-Second Grounding Protocol -->
-        <div style="background: #FFFDF9; border: 1px solid #EEDBC5; border-radius: 14px; padding: 16px; margin: 14px 0;">
-          <h4 style="color: var(--primary-dark); margin-bottom: 8px; font-size: 0.95rem;">
-            🛑 The 4-Step Rule (Before You Say a Word):
-          </h4>
-          <ol style="margin-left: 20px; font-size: 0.88rem; color: #444; line-height: 1.7;">
-            <li><strong>Step back 2 feet:</strong> Physically disconnect from the immediate mess or crying.</li>
-            <li><strong>Drop your shoulders & un-clench your jaw:</strong> Release the physical tension stored in your neck.</li>
-            <li><strong>Get down on your knees to their eye level:</strong> Standing over a 1-year-old feels like a giant roaring. Eye level brings instant safety.</li>
-            <li><strong>Whisper, don't lecture:</strong> Shouting scrambles their baby brain; a whisper makes them stop and listen.</li>
-          </ol>
-        </div>
+        <!-- Sub Panel 1: Reset & Sanctuary -->
+        <div id="sub-calm-reset" class="sub-panel active">
+          <h2 class="card-title">🌸 Mama’s Emergency Nervous System Reset</h2>
+          <p class="card-subtitle">When your patience is zero and you feel about to yell or blame them.</p>
 
-        <!-- Joint Family Validation: Why You Want to Escape -->
-        <div class="overstimulation-box">
-          <h4>🏡 “Why Do I Want to Escape and Avoid Them When Khushal is Home?”</h4>
-          <p>
-            Mama, wanting to escape is <strong>not because you don't love your kids</strong>. Living in a joint family with your in-laws, devar, devrani, and <strong>THREE toddlers</strong> (Khush, Khwaish & Jainam) means you are under 24/7 sensory overload and unspoken social judgment.
-          </p>
-          <p style="margin-top: 6px;">
-            In a joint home, you feel like everyone is watching how you mother. Claiming "work" or retreating when Khushal is home is your subconscious mind's only safe way to breathe. <strong>You don't need to feel guilty. You need quiet recharge!</strong>
-          </p>
-        </div>
-
-        <!-- 15-Min Sanctuary Recharge -->
-        <div style="background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 18px; text-align: center; margin-top: 16px;">
-          <h4 style="font-size: 0.98rem; color: var(--text-dark);">⏳ Mama's Guilt-Free Sanctuary Timer</h4>
-          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 10px;">
-            Step into your room. Hand Khush and Khwaish to Khushal or family. Take 15 minutes of silence with zero guilt.
-          </p>
-          <div id="sanctuaryTimerDisplay" style="font-size: 2.4rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums;">
-            15:00
-          </div>
-          <div style="display: flex; gap: 8px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
-            <button id="sanctuaryStartBtn" class="btn btn-primary" onclick="startSanctuaryTimer(15)">
-              ▶ Start 15-Min Sanctuary
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px;">
+            <button class="btn btn-primary" onclick="openBreatheModal()" style="flex: 1; min-width: 160px;">
+              🫁 4-7-8 Breathing Circle
             </button>
-            <button class="btn btn-outline" onclick="startSanctuaryTimer(5)">5 Min</button>
-            <button class="btn btn-outline" onclick="startSanctuaryTimer(10)">10 Min</button>
-            <button class="btn btn-whatsapp" onclick="sendKhushalSOS()">
-              💬 Ping Khushal for Tag-Team
+            <button class="btn btn-secondary" onclick="mamaAudio.playSingingBowl(240, 5)">
+              🔔 Singing Bowl
             </button>
           </div>
+
+          <!-- 30-Second Grounding Protocol -->
+          <div style="background: #FFFDF9; border: 1px solid #EEDBC5; border-radius: 12px; padding: 14px; margin: 12px 0;">
+            <h4 style="color: var(--primary-dark); margin-bottom: 6px; font-size: 0.92rem;">
+              🛑 The 4-Step Rule (Before You Say a Word):
+            </h4>
+            <ol style="margin-left: 18px; font-size: 0.84rem; color: #444; line-height: 1.6;">
+              <li><strong>Step back 2 feet:</strong> Physically disconnect from the immediate mess or crying.</li>
+              <li><strong>Drop shoulders & unclench jaw:</strong> Release the physical tension stored in your neck.</li>
+              <li><strong>Get down on knees to eye level:</strong> Standing over a 1-year-old feels like a giant roaring. Eye level brings instant safety.</li>
+              <li><strong>Whisper, don't lecture:</strong> Shouting scrambles their baby brain; a whisper makes them stop and listen.</li>
+            </ol>
+          </div>
+
+          <!-- Joint Family Validation: Why You Want to Escape -->
+          <div class="overstimulation-box">
+            <h4>🏡 “Why Do I Want to Escape When Khushal is Home?”</h4>
+            <p>
+              Mama, wanting to escape is <strong>not because you don't love your kids</strong>. Living in a joint family with in-laws, brother, sister-in-law, and <strong>THREE toddlers</strong> (Khush, Khwaish & Jainam) means you are under 24/7 sensory overload and unspoken social judgment.
+            </p>
+            <p style="margin-top: 4px;">
+              In a joint home, you feel like everyone is watching how you mother. Claiming "work" or retreating when Khushal is home is your brain's only safe way to breathe. <strong>You need quiet recharge, not guilt!</strong>
+            </p>
+          </div>
+
+          <!-- 15-Min Sanctuary Recharge -->
+          <div style="background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 16px; text-align: center; margin-top: 14px;">
+            <h4 style="font-size: 0.94rem; color: var(--text-dark);">⏳ Mama's Guilt-Free Sanctuary Timer</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">
+              Step into your room. Hand Khush and Khwaish to Khushal. Take 15 minutes of silence with zero guilt.
+            </p>
+            <div id="sanctuaryTimerDisplay" style="font-size: 2.2rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums;">
+              15:00
+            </div>
+            <div style="display: flex; gap: 6px; justify-content: center; margin-top: 8px; flex-wrap: wrap;">
+              <button id="sanctuaryStartBtn" class="btn btn-primary" onclick="startSanctuaryTimer(15)">
+                ▶ Start 15-Min Reset
+              </button>
+              <button class="btn btn-outline" onclick="startSanctuaryTimer(5)">5 Min</button>
+              <button class="btn btn-outline" onclick="startSanctuaryTimer(10)">10 Min</button>
+              <button class="btn btn-whatsapp" onclick="sendKhushalSOS()">
+                💬 Ping Khushal
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ============================================== -->
-    <!-- TAB 2: CRYING DECODER & PAMPERING GUIDE -->
-    <!-- ============================================== -->
-    <section id="section-crying" class="tab-section">
-      <div class="card">
-        <h2 class="card-title">😭 The Crying Decoder: Why Crying Angers Us & How to Pamper Them</h2>
-        <p class="card-subtitle">Understanding why they cry and why verbal orders never work.</p>
+        <!-- Sub Panel 2: Why They Cry & Pampering Guide -->
+        <div id="sub-calm-crying" class="sub-panel">
+          <h2 class="card-title">😭 The Crying Decoder & Pamper Guide</h2>
+          <p class="card-subtitle">Understanding why toddlers cry and why verbal orders never work.</p>
 
-        <!-- The Big Truth -->
-        <div class="crying-highlight">
-          <h3 style="color: #92400E; font-size: 1.05rem; margin-bottom: 6px;">
-            💡 Why saying “STOP CRYING!” makes them cry louder:
+          <!-- The Big Truth -->
+          <div class="crying-highlight">
+            <h3 style="color: #92400E; font-size: 0.98rem; margin-bottom: 4px;">
+              💡 Why saying “STOP CRYING!” makes them cry louder:
+            </h3>
+            <p style="font-size: 0.84rem; color: #78350F; line-height: 1.55;">
+              Khush and Khwaish are only 1 year & 9 months old. Their crying is an <strong>involuntary nervous system storm</strong>. They do not have an off-switch! When you tell them to stop, their baby brain hears distress and fear, so their adrenaline spikes and they scream harder. They literally <em>cannot</em> stop without physical soothing.
+            </p>
+          </div>
+
+          <!-- Why Khushal Carrying Them Works -->
+          <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px; padding: 14px; margin-bottom: 14px;">
+            <h4 style="color: #166534; font-size: 0.92rem; margin-bottom: 3px;">
+              ❤️ Why They Stop Crying When Papa (Khushal) Carries Them:
+            </h4>
+            <p style="font-size: 0.84rem; color: #14532D; line-height: 1.55;">
+              Notice how when Khushal picks them up and carries them, they quickly calm down? That is called <strong>Physical Co-Regulation</strong>! The chest-to-chest contact, heartbeat vibration, and gentle swaying releases oxytocin and calms their vagus nerve. Khushal is simply using body-to-body touch instead of words. You have that exact same superpower, Mama!
+            </p>
+          </div>
+
+          <h3 style="font-size: 0.95rem; color: var(--primary-dark); margin: 14px 0 8px;">
+            🧸 6 Gentle Ways to Pamper Khush & Khwaish:
           </h3>
-          <p style="font-size: 0.88rem; color: #78350F; line-height: 1.6;">
-            Khush and Khwaish are only 1 year & 9 months old. Their crying is an <strong>involuntary nervous system storm</strong>. They do not have an off-switch! When you tell them to stop, their baby brain hears rejection and panic, so their adrenaline spikes and they scream harder. Especially in front of elders, you feel pressured for them to be quiet—but they literally <em>cannot</em> stop without physical soothing.
-          </p>
-        </div>
 
-        <!-- Why Khushal Carrying Them Works -->
-        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px; padding: 16px; margin-bottom: 18px;">
-          <h4 style="color: #166534; font-size: 0.95rem; margin-bottom: 4px;">
-            ❤️ Why They Stop Crying When Papa (Khushal) Carries Them:
-          </h4>
-          <p style="font-size: 0.86rem; color: #14532D; line-height: 1.6;">
-            Notice how when Khushal picks them up and carries them, they quickly calm down? That is called <strong>Physical Co-Regulation</strong>! The chest-to-chest contact, heartbeat vibration, and gentle swaying releases oxytocin and calms their vagus nerve. Khushal is not a “magic parent”—he is simply using body-to-body touch instead of words. You have that exact same superpower, Mama!
-          </p>
-        </div>
-
-        <h3 style="font-size: 1rem; color: var(--primary-dark); margin: 18px 0 10px;">
-          🧸 6 Gentle Ways to Pamper Khush & Khwaish When They Cry:
-        </h3>
-
-        <!-- Pamper Card 1 -->
-        <div class="pamper-card">
-          <div class="pamper-icon">🐨</div>
-          <div class="pamper-info">
-            <h4>1. The Koala Chest Carry & Slow Sway</h4>
-            <p>Pick up Khush or Khwaish, place their head against your left collarbone (near your heartbeat), and sway slowly side-to-side (1 sway per second). Do not talk. Just hum softly.</p>
+          <div class="pamper-card">
+            <div class="pamper-icon">🐨</div>
+            <div class="pamper-info">
+              <h4>1. The Koala Chest Carry & Slow Sway</h4>
+              <p>Pick up Khush or Khwaish, place their head against your left collarbone (near your heartbeat), and sway slowly side-to-side (1 sway per second). Hum softly.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Pamper Card 2 -->
-        <div class="pamper-card">
-          <div class="pamper-icon">🤫</div>
-          <div class="pamper-info">
-            <h4>2. The Magic Curious Whisper</h4>
-            <p>Instead of raising your voice over their screams, drop down to an exaggerated whisper: <em>“Look... Mama found a secret tiny bird outside!”</em> Toddlers naturally halt their cries to strain and hear a whisper.</p>
+          <div class="pamper-card">
+            <div class="pamper-icon">🤫</div>
+            <div class="pamper-info">
+              <h4>2. The Magic Curious Whisper</h4>
+              <p>Instead of shouting over their screams, drop down to an exaggerated whisper: <em>“Look... Mama found a secret tiny bird outside!”</em> Toddlers halt their cries to strain and hear a whisper.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Pamper Card 3 -->
-        <div class="pamper-card">
-          <div class="pamper-icon">🧊</div>
-          <div class="pamper-info">
-            <h4>3. The Cool Washcloth / Ice Cube Touch</h4>
-            <p>Run a small soft washcloth under cool water and gently wipe their hot forehead and little cheeks, or let them hold an ice cube. The sudden cool temperature triggers the mammalian calming reflex, immediately resetting the crying cycle!</p>
+          <div class="pamper-card">
+            <div class="pamper-icon">🧊</div>
+            <div class="pamper-info">
+              <h4>3. The Cool Washcloth / Ice Cube Touch</h4>
+              <p>Run a small soft washcloth under cool water and gently wipe their hot forehead and little cheeks. The cool temperature triggers the calming reflex, immediately resetting the crying cycle!</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Pamper Card 4 -->
-        <div class="pamper-card">
-          <div class="pamper-icon">🪟</div>
-          <div class="pamper-info">
-            <h4>4. The Window / Balcony Sky Walk</h4>
-            <p>Carry them away from the crowd to a window or balcony. Point outside: <em>“Look at the big tree moving in the wind! Look at that scooter!”</em> Fresh cool air and distant horizon vision instantly resets their nervous system.</p>
+          <div class="pamper-card">
+            <div class="pamper-icon">🪟</div>
+            <div class="pamper-info">
+              <h4>4. The Window / Balcony Sky Walk</h4>
+              <p>Carry them away from the noise to a window or balcony. Point outside: <em>“Look at the big tree moving in the wind!”</em> Fresh cool air resets their sensory brain.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Pamper Card 5 -->
-        <div class="pamper-card">
-          <div class="pamper-icon">🌯</div>
-          <div class="pamper-info">
-            <h4>5. The Twin Blanket Burrito & Gentle Massage</h4>
-            <p>Wrap Khush or Khwaish snugly in a soft warm blanket like a little burrito. Press gently along their arms and back with firm, comforting hands. Deep proprioceptive pressure relaxes muscles instantly.</p>
+          <div class="pamper-card">
+            <div class="pamper-icon">🌯</div>
+            <div class="pamper-info">
+              <h4>5. The Twin Blanket Burrito</h4>
+              <p>Wrap Khush or Khwaish snugly in a soft warm blanket like a little burrito. Press gently along their arms and back with firm, comforting hands. Deep pressure relaxes muscles instantly.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Pamper Card 6 -->
-        <div class="pamper-card">
-          <div class="pamper-icon">🪞</div>
-          <div class="pamper-info">
-            <h4>6. The Silly Big Mirror Reset</h4>
-            <p>Walk directly to the big bedroom mirror. Hold them up so they see their own teary face: <em>“Look at those little teardrops! Who is that handsome boy Khush? Who is that princess Khwaish?”</em> Make silly pufferfish faces together.</p>
+          <div class="pamper-card">
+            <div class="pamper-icon">🪞</div>
+            <div class="pamper-info">
+              <h4>6. The Silly Big Mirror Reset</h4>
+              <p>Walk directly to the big bedroom mirror. Hold them up so they see their own teary face: <em>“Look at those little teardrops! Who is that handsome boy Khush? Who is that princess Khwaish?”</em> Make silly pufferfish faces.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================== -->
-    <!-- TAB 3: JOINT FAMILY & 3 TODDLERS PLAYBOOK -->
+    <!-- TAB 2: WISDOM (Brain Facts + Joint Family) -->
     <!-- ============================================== -->
-    <section id="section-joint" class="tab-section">
+    <section id="section-wisdom" class="tab-section">
       <div class="card">
-        <h2 class="card-title">🏡 Joint Family Haven: Managing 3 Toddlers (Khush, Khwaish & Jainam)</h2>
-        <p class="card-subtitle">Practical wisdom for living peacefully with in-laws, brother, sister-in-law, and 3 little ones.</p>
+        <!-- Sub-Segment Controls -->
+        <div class="segmented-control">
+          <button class="segmented-btn active" onclick="switchSubTab('wisdom', 'brain')">🧠 Brain Facts</button>
+          <button class="segmented-btn" onclick="switchSubTab('wisdom', 'joint')">🏡 Joint Family & Jainam</button>
+        </div>
 
-        <!-- Pressure Relief -->
-        <div style="background: #FDF2E9; border: 1.5px solid #F39C12; border-radius: 14px; padding: 18px; margin-bottom: 18px;">
-          <h4 style="color: #B9770E; font-size: 1rem; margin-bottom: 6px;">
-            🛡️ Letting Go of the “Perfect Bahu” Pressure
-          </h4>
-          <p style="font-size: 0.88rem; color: #784212; line-height: 1.6;">
-            When Khush or Khwaish cry or throw food in the living room in front of elders or devrani, your heart races because you feel judged. Remember: <strong>Toddler tantrums are biologically normal.</strong> They are not a sign that you are a bad mother.
-          </p>
-          <div style="margin-top: 10px; padding: 10px; background: rgba(255,255,255,0.7); border-radius: 8px; font-size: 0.85rem; color: #784212;">
-            <strong>💬 Polite script when elders comment:</strong><br>
-            <em>“They are just 1 year old and learning how to handle big feelings, Mummy ji/Papa ji. Let me take them to the room for 2 minutes to calm down.”</em> (Gives you a dignified exit!).
+        <!-- Sub Panel 1: Brain Facts from Instagram Slides -->
+        <div id="sub-wisdom-brain" class="sub-panel active">
+          <h2 class="card-title">🧠 Toddler Brain Decoder</h2>
+          <p class="card-subtitle">The science of toddlers under age 3: It is NOT defiance, it is brain development.</p>
+
+          <div class="brain-grid" id="brainWisdomGrid">
+            <!-- Populated by app.js from the 7 Instagram slides -->
           </div>
         </div>
 
-        <!-- Managing 3 Toddlers (Khush, Khwaish, Jainam) -->
-        <h3 style="font-size: 1rem; color: var(--primary-dark); margin: 16px 0 10px;">
-          🧸 The 3-Toddler Toy & Harmony Playbook:
-        </h3>
+        <!-- Sub Panel 2: Joint Family & Cousin Jainam -->
+        <div id="sub-wisdom-joint" class="sub-panel">
+          <h2 class="card-title">🏡 Joint Family Haven & 3-Toddler Harmony</h2>
+          <p class="card-subtitle">Managing 3 toddlers (Khush, Khwaish & cousin Jainam) with peace and confidence.</p>
 
-        <div class="brain-card" style="margin-bottom: 12px;">
-          <span class="brain-tag tag-truth">Toy Disputes</span>
-          <h4>When Khush, Khwaish, and Jainam Fight Over One Toy</h4>
-          <p style="font-size: 0.86rem; color: #555; line-height: 1.6;">
-            At under 3 years old, toddlers have zero neurological concept of sharing. When Jainam has a truck, Khush and Khwaish want <em>that exact truck</em>. Telling them “Share nicely like good babies” never works.
-          </p>
-          <div class="brain-instead">
-            <strong>💡 What works:</strong>
-            1. Have duplicate “sharing bins” with multiple cars/blocks.<br>
-            2. The 2-Minute Kitchen Timer: <em>“Jainam has the red car until the bell rings ding-ding! Khush gets the blue car!”</em><br>
-            3. Parallel play zones: Set up two small rugs on the floor so they play side-by-side without grabbing.
+          <!-- Pressure Relief -->
+          <div style="background: #FDF2E9; border: 1.5px solid #F39C12; border-radius: 12px; padding: 14px; margin-bottom: 14px;">
+            <h4 style="color: #B9770E; font-size: 0.95rem; margin-bottom: 4px;">
+              🛡️ Letting Go of the “Perfect Bahu” Pressure
+            </h4>
+            <p style="font-size: 0.84rem; color: #784212; line-height: 1.55;">
+              When Khush or Khwaish cry or throw food in the living room in front of elders or devrani, your heart races because you feel judged. Remember: <strong>Toddler tantrums are biologically normal.</strong> They are not a sign that you are a bad mother.
+            </p>
+            <div style="margin-top: 8px; padding: 8px 10px; background: rgba(255,255,255,0.8); border-radius: 8px; font-size: 0.82rem; color: #784212;">
+              <strong>💬 Polite script when elders comment:</strong><br>
+              <em>“They are just 1 year old and learning how to handle big feelings, Mummy ji/Papa ji. Let me take them to the room for 2 minutes to calm down.”</em>
+            </div>
           </div>
-        </div>
 
-        <div class="brain-card" style="margin-bottom: 12px;">
-          <span class="brain-tag tag-myth">Comparison Shield</span>
-          <h4>Never Compare Khush & Khwaish to Cousin Jainam</h4>
-          <p style="font-size: 0.86rem; color: #555; line-height: 1.6;">
-            In joint families, people naturally say: <em>“Look, Jainam ate all his food, why aren’t you eating?”</em> or <em>“Jainam doesn’t cry like this.”</em>
-          </p>
-          <div class="brain-instead">
-            <strong>💡 Gentle Shield:</strong>
-            Twins develop differently than singletons! Khush and Khwaish share mama’s attention 24/7. Never let comparisons make you feel inadequate. Your twins are unique, healthy, and wonderfully themselves.
+          <!-- Managing 3 Toddlers (Khush, Khwaish, Jainam) -->
+          <h3 style="font-size: 0.95rem; color: var(--primary-dark); margin: 12px 0 8px;">
+            🧸 The 3-Toddler Toy & Harmony Playbook:
+          </h3>
+
+          <div class="brain-card" style="margin-bottom: 10px;">
+            <span class="brain-tag tag-truth">Toy Disputes</span>
+            <h4>When Khush, Khwaish, and Jainam Fight Over One Toy</h4>
+            <p style="font-size: 0.84rem; color: #555; line-height: 1.55;">
+              At under 3 years old, toddlers have zero neurological concept of sharing. Telling them “Share nicely like good babies” never works.
+            </p>
+            <div class="brain-instead">
+              <strong>💡 What works:</strong>
+              1. Have duplicate “sharing bins” with multiple cars/blocks.<br>
+              2. The 2-Minute Kitchen Timer: <em>“Jainam has the red car until the bell rings! Khush gets the blue car!”</em><br>
+              3. Parallel play zones: Set up two small rugs on the floor so they play side-by-side without grabbing.
+            </div>
+          </div>
+
+          <div class="brain-card" style="margin-bottom: 10px;">
+            <span class="brain-tag tag-myth">Comparison Shield</span>
+            <h4>Never Compare Khush & Khwaish to Cousin Jainam</h4>
+            <p style="font-size: 0.84rem; color: #555; line-height: 1.55;">
+              In joint families, people naturally say: <em>“Look, Jainam ate all his food, why aren’t you eating?”</em> or <em>“Jainam doesn’t cry like this.”</em>
+            </p>
+            <div class="brain-instead">
+              <strong>💡 Gentle Shield:</strong>
+              Twins develop differently than singletons! Khush and Khwaish share mama’s attention 24/7. Never let comparisons make you feel inadequate. Your twins are unique, healthy, and wonderfully themselves.
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================== -->
-    <!-- TAB 4: TODDLER BRAIN DECODER (From Instagram Slides) -->
-    <!-- ============================================== -->
-    <section id="section-brain" class="tab-section">
-      <div class="card">
-        <h2 class="card-title">🧠 Toddler Brain Decoder: Why They Do What They Do</h2>
-        <p class="card-subtitle">The science of toddlers under age 3: It is NOT defiance, it is brain development.</p>
-
-        <div class="brain-grid" id="brainWisdomGrid">
-          <!-- Populated by app.js from the 7 Instagram slides -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================== -->
-    <!-- TAB 5: TWINS HEALTH, VITAMINS & NEBULIZER -->
+    <!-- TAB 3: HEALTH (Vitamins & Nebulizer Game) -->
     <!-- ============================================== -->
     <section id="section-health" class="tab-section">
       <div class="card">
-        <h2 class="card-title">💊 Khush & Khwaish Daily Health & Sick-Day Care</h2>
-        <p class="card-subtitle">Keep track of vitamins, teething, and soothing nebulizer sessions for colds.</p>
-
-        <!-- Twin Selector -->
-        <div class="twins-selector">
-          <button id="btnBoth" class="twin-btn both-active" onclick="selectTwin('both')">
-            👫 Both Twins
-          </button>
-          <button id="btnKhush" class="twin-btn" onclick="selectTwin('khush')">
-            👦 Khush
-          </button>
-          <button id="btnKhwaish" class="twin-btn" onclick="selectTwin('khwaish')">
-            👧 Khwaish
-          </button>
+        <!-- Sub-Segment Controls -->
+        <div class="segmented-control">
+          <button class="segmented-btn active" onclick="switchSubTab('health', 'vitamins')">💊 Daily Vitamins</button>
+          <button class="segmented-btn" onclick="switchSubTab('health', 'nebulizer')">🌬️ Nebulizer Game & Cold</button>
         </div>
 
-        <!-- Daily Vitamins Checklist -->
-        <div id="healthChecklist">
-          <!-- Rendered dynamically -->
-        </div>
+        <!-- Sub Panel 1: Vitamins & Meds -->
+        <div id="sub-health-vitamins" class="sub-panel active">
+          <h2 class="card-title">💊 Khush & Khwaish Daily Health</h2>
+          <p class="card-subtitle">Keep track of vitamins, teething, and hydration.</p>
 
-        <!-- NEBULIZER & COLD CARE STATION -->
-        <div class="nebulizer-box">
-          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-            <h3 style="color: var(--secondary); font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
-              <span>🌬️</span>
-              <span>Nebulizer & Cold Care Fun Station</span>
-            </h3>
-            <span style="font-size: 0.78rem; background: #D0EBE3; color: #166534; padding: 2px 8px; border-radius: 10px; font-weight: 700;">
-              Distraction Game Included!
-            </span>
-          </div>
-          <p style="font-size: 0.85rem; color: #444; margin-top: 4px;">
-            Nebulizer mask can be scary for toddlers. Hand them the phone while you hold the mask so they can <strong>pop bubbles on the screen</strong> during their session!
-          </p>
-
-          <!-- Twin Selection for Nebulizer -->
-          <div style="margin: 12px 0; display: flex; gap: 10px; align-items: center;">
-            <label style="font-size: 0.85rem; font-weight: 600;">For:</label>
-            <select id="nebulizerTwinSelect" style="padding: 6px 12px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.88rem;">
-              <option value="khush">👦 Khush</option>
-              <option value="khwaish">👧 Khwaish</option>
-              <option value="both">👫 Both (Sequential)</option>
-            </select>
-            <select id="nebulizerDurationSelect" style="padding: 6px 12px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.88rem;">
-              <option value="5">5 Minutes</option>
-              <option value="8" selected>8 Minutes</option>
-              <option value="10">10 Minutes</option>
-            </select>
+          <!-- Twin Selector -->
+          <div class="twins-selector">
+            <button id="btnBoth" class="twin-btn both-active" onclick="selectTwin('both')">👫 Both</button>
+            <button id="btnKhush" class="twin-btn" onclick="selectTwin('khush')">👦 Khush</button>
+            <button id="btnKhwaish" class="twin-btn" onclick="selectTwin('khwaish')">👧 Khwaish</button>
           </div>
 
-          <!-- Interactive Bubble Pop Arena -->
-          <div class="nebulizer-game-arena" id="nebulizerArena" title="Tap the bubbles to pop them!">
-            <div style="position: absolute; top: 10px; left: 12px; font-size: 0.78rem; color: #666; pointer-events: none;">
-              🫧 Tap & pop bubbles to distract the twins! 🎈
+          <!-- Daily Vitamins Checklist -->
+          <div id="healthChecklist"></div>
+
+          <!-- Sick Day Medicine Logger -->
+          <div style="background: #FFF8F6; border: 1px solid #FAD2C7; border-radius: 12px; padding: 14px; margin-top: 14px;">
+            <h4 style="color: var(--primary-dark); font-size: 0.92rem; margin-bottom: 6px;">
+              📝 Log Sickness Medicine (Cough, Fever, Nasal Spray)
+            </h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+              <select id="medTwinSelect" style="padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.82rem;">
+                <option value="both">Both Khush & Khwaish</option>
+                <option value="khush">Khush only</option>
+                <option value="khwaish">Khwaish only</option>
+              </select>
+              <input id="medNameInput" type="text" placeholder="Med (e.g. Crocin, Saline)" style="padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.82rem;">
             </div>
-          </div>
-
-          <!-- Nebulizer Timer & Action Buttons -->
-          <div style="text-align: center;">
-            <div id="nebulizerTimer" class="timer-display">08:00</div>
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-              <button id="nebulizerStartBtn" class="btn btn-secondary" onclick="startNebulizer(parseInt(document.getElementById('nebulizerDurationSelect').value))">
-                ▶ Start Nebulizer Fun Session
-              </button>
-              <button class="btn btn-outline" onclick="spawnBubble()">
-                🫧 Add More Bubbles
+            <div style="display: flex; gap: 6px;">
+              <input id="medDoseInput" type="text" placeholder="Dose (e.g. 2.5ml)" style="flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.82rem;">
+              <button class="btn btn-primary" onclick="logMedicineDose()" style="padding: 8px 14px; font-size: 0.85rem;">
+                + Save Log
               </button>
             </div>
-          </div>
-
-          <!-- Mask Tricks -->
-          <div style="background: rgba(255,255,255,0.7); border-radius: 10px; padding: 12px; margin-top: 14px; font-size: 0.82rem; color: #333;">
-            <strong>💡 Nebulizer Comfort Hacks:</strong>
-            <ul style="margin-left: 18px; margin-top: 4px;">
-              <li>Pretend the mask is an <em>Astronaut Rocket Mask</em> traveling to the moon!</li>
-              <li>Let Khush or Khwaish hold the mask against their favorite teddy bear first.</li>
-              <li>Position the mask slightly away (blow-by mist) if the tight elastic strap causes terror.</li>
-            </ul>
+            <div style="margin-top: 10px;">
+              <h5 style="font-size: 0.76rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Recent History:</h5>
+              <div id="medsHistoryList"></div>
+            </div>
           </div>
         </div>
 
-        <!-- Sick Day Medicine Logger -->
-        <div style="background: #FFF8F6; border: 1px solid #FAD2C7; border-radius: 12px; padding: 16px;">
-          <h4 style="color: var(--primary-dark); font-size: 0.95rem; margin-bottom: 6px;">
-            📝 Log Sickness Medicine (Cough, Fever, Nasal Spray)
-          </h4>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
-            <select id="medTwinSelect" style="padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.85rem;">
-              <option value="both">Both Khush & Khwaish</option>
-              <option value="khush">Khush only</option>
-              <option value="khwaish">Khwaish only</option>
-            </select>
-            <input id="medNameInput" type="text" placeholder="Medicine Name (e.g. Crocin, Saline)" style="padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.85rem;">
-          </div>
-          <div style="display: flex; gap: 8px;">
-            <input id="medDoseInput" type="text" placeholder="Dose (e.g. 2.5ml / 2 drops)" style="flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.85rem;">
-            <button class="btn btn-primary" onclick="logMedicineDose()" style="padding: 8px 16px;">
-              + Save Log
-            </button>
-          </div>
+        <!-- Sub Panel 2: Nebulizer Station & Game -->
+        <div id="sub-health-nebulizer" class="sub-panel">
+          <div class="nebulizer-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+              <h3 style="color: var(--secondary); font-size: 1.05rem; display: flex; align-items: center; gap: 6px;">
+                <span>🌬️</span>
+                <span>Nebulizer Fun Station</span>
+              </h3>
+              <span style="font-size: 0.72rem; background: #D0EBE3; color: #166534; padding: 2px 6px; border-radius: 8px; font-weight: 700;">
+                Distraction Game
+              </span>
+            </div>
+            <p style="font-size: 0.82rem; color: #444; margin-top: 3px;">
+              Hand them the phone while you hold the mask so they can <strong>pop bubbles on screen</strong> during the session!
+            </p>
 
-          <div style="margin-top: 12px;">
-            <h5 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Recent Dose History:</h5>
-            <div id="medsHistoryList"></div>
+            <div style="margin: 10px 0; display: flex; gap: 8px; align-items: center;">
+              <label style="font-size: 0.82rem; font-weight: 600;">For:</label>
+              <select id="nebulizerTwinSelect" style="padding: 5px 10px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.82rem;">
+                <option value="khush">👦 Khush</option>
+                <option value="khwaish">👧 Khwaish</option>
+                <option value="both">👫 Both (Sequential)</option>
+              </select>
+              <select id="nebulizerDurationSelect" style="padding: 5px 10px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.82rem;">
+                <option value="5">5 Minutes</option>
+                <option value="8" selected>8 Minutes</option>
+                <option value="10">10 Minutes</option>
+              </select>
+            </div>
+
+            <!-- Bubble Pop Game Arena -->
+            <div class="nebulizer-game-arena" id="nebulizerArena">
+              <div style="position: absolute; top: 8px; left: 10px; font-size: 0.74rem; color: #666; pointer-events: none;">
+                🫧 Tap & pop bubbles to distract the twins! 🎈
+              </div>
+            </div>
+
+            <!-- Timer & Action Buttons -->
+            <div style="text-align: center;">
+              <div id="nebulizerTimer" class="timer-display">08:00</div>
+              <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                <button id="nebulizerStartBtn" class="btn btn-secondary" onclick="startNebulizer(parseInt(document.getElementById('nebulizerDurationSelect').value))">
+                  ▶ Start Fun Session
+                </button>
+                <button class="btn btn-outline" onclick="spawnBubble()">
+                  🫧 More Bubbles
+                </button>
+              </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.7); border-radius: 8px; padding: 10px; margin-top: 12px; font-size: 0.78rem; color: #333;">
+              <strong>💡 Nebulizer Hacks:</strong>
+              <ul style="margin-left: 16px; margin-top: 3px;">
+                <li>Pretend the mask is an <em>Astronaut Rocket Mask</em> traveling to space!</li>
+                <li>Let Khush or Khwaish put the mask on a teddy bear first.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================== -->
-    <!-- TAB 6: WHAT TO MAKE FOR THEM (MEALS & SNACKS) -->
+    <!-- TAB 4: FOOD (Prominent & Easy to Tap!) -->
     <!-- ============================================== -->
-    <section id="section-meals" class="tab-section">
+    <section id="section-food" class="tab-section">
       <div class="card">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 8px;">
-          <h2 class="card-title" style="margin-bottom: 0;">🍲 What to Make for Khush & Khwaish (and Jainam)</h2>
-          <button class="btn btn-primary" onclick="pickRandomRecipe()" style="padding: 6px 14px; font-size: 0.82rem;">
-            🎲 Pick For Me (Tired Mama)
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 6px;">
+          <h2 class="card-title" style="margin-bottom: 0;">🍲 What to Make for Them</h2>
+          <button class="btn btn-primary" onclick="pickRandomRecipe()" style="padding: 5px 12px; font-size: 0.78rem;">
+            🎲 Pick For Me
           </button>
         </div>
-        <p class="card-subtitle">Zero-stress, nutritious, quick toddler food that 1-year-olds actually love to eat!</p>
+        <p class="card-subtitle">Zero-stress, nutritious, quick toddler food that Khush, Khwaish (and Jainam!) love to eat.</p>
 
         <!-- Category Filter Chips -->
         <div class="filter-chips">
@@ -406,7 +408,7 @@
           <button class="chip" data-filter="quick" onclick="filterRecipes('quick')">⚡ 5-Min Speedy</button>
           <button class="chip" data-filter="meals" onclick="filterRecipes('meals')">🥣 Lunch & Dinner</button>
           <button class="chip" data-filter="sick" onclick="filterRecipes('sick')">🤧 Cold & Sick Day</button>
-          <button class="chip" data-filter="finger" onclick="filterRecipes('finger')">✋ Twin Finger Foods</button>
+          <button class="chip" data-filter="finger" onclick="filterRecipes('finger')">✋ Finger Snacks</button>
         </div>
 
         <!-- Recipes List -->
@@ -417,7 +419,7 @@
     </section>
 
     <!-- ============================================== -->
-    <!-- TAB 7: HOW LUCKY WE ARE (LOVE VAULT & KHUSHAL) -->
+    <!-- TAB 5: LOVE VAULT & KHUSHAL'S LETTER -->
     <!-- ============================================== -->
     <section id="section-love" class="tab-section">
       <div class="card">
@@ -425,26 +427,24 @@
         <p class="card-subtitle">A sanctuary to remind your heart why you adore Khush & Khwaish.</p>
 
         <!-- Dynamic Memory Grid -->
-        <div class="memory-grid" id="memoriesGrid">
-          <!-- Populated by app.js -->
-        </div>
+        <div class="memory-grid" id="memoriesGrid"></div>
 
-        <div style="text-align: center; margin: 16px 0;">
+        <div style="text-align: center; margin: 14px 0;">
           <button class="btn btn-outline" onclick="addCustomMemory()">
             ✍️ Add a Sweet Memory or Cute Word Today
           </button>
         </div>
 
-        <!-- The Restraint Collapse Explanation for Spouses -->
-        <div style="background: #FDF4E7; border: 1.5px solid #F3C994; border-radius: 14px; padding: 18px; margin-top: 18px;">
-          <h4 style="color: #92400E; font-size: 1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+        <!-- Restraint Collapse Explanation -->
+        <div style="background: #FDF4E7; border: 1.5px solid #F3C994; border-radius: 12px; padding: 14px; margin-top: 14px;">
+          <h4 style="color: #92400E; font-size: 0.94rem; margin-bottom: 4px; display: flex; align-items: center; gap: 5px;">
             <span>🤝</span>
             <span>Why Mama Breaks Down When Khushal Walks in the Door</span>
           </h4>
-          <p style="font-size: 0.86rem; color: #6D3200; line-height: 1.6; margin-bottom: 8px;">
-            Child psychologists call this <strong>“Restraint Collapse”</strong>. All day long while Khushal is working, Mama carries the full weight of twin toddlers in a busy joint family. She holds all her stress inside so the kids are safe and fed, and to manage household expectations.
+          <p style="font-size: 0.82rem; color: #6D3200; line-height: 1.55; margin-bottom: 6px;">
+            Child psychologists call this <strong>“Restraint Collapse”</strong>. All day long while Khushal is working, Mama carries the full weight of twin toddlers in a busy joint family. She holds all her stress inside so the kids are safe and fed.
           </p>
-          <p style="font-size: 0.86rem; color: #6D3200; line-height: 1.6;">
+          <p style="font-size: 0.82rem; color: #6D3200; line-height: 1.55;">
             The moment Khushal walks in, Mama’s body senses <em>“My safe person is here”</em> and her nervous system finally drops its guard. The exhaustion spills over as irritability or wanting to escape. She is not ungrateful or mean—she is simply depleted to the bone.
           </p>
         </div>
@@ -455,7 +455,7 @@
           <p>
             “I know how relentlessly hard it is to care for Khush and Khwaish every single day in our busy home with my parents, my brother, his wife, and little Jainam. Taking care of twins is already doing two full-time jobs at once, and doing it in a joint household takes immense patience.
           </p>
-          <p style="margin-top: 8px;">
+          <p style="margin-top: 6px;">
             When you feel tired, snappy, or need to step away into our room, know that I am your shield. I see how much you love our babies. They were born on January 2, 2025, and having them with you is the greatest blessing of our lives. Whenever you need a break, tell me. We are a team, always. You are the heartbeat of our little family.”
           </p>
         </div>
@@ -471,10 +471,10 @@
     <div class="breathe-dialog">
       <button class="close-btn" onclick="closeBreatheModal()" aria-label="Close">✕</button>
       
-      <h3 style="color: var(--primary-dark); font-size: 1.25rem; margin-bottom: 2px;">
+      <h3 style="color: var(--primary-dark); font-size: 1.15rem; margin-bottom: 2px;">
         🌸 Take a Breath, Mama
       </h3>
-      <p style="font-size: 0.85rem; color: var(--text-muted);">
+      <p style="font-size: 0.82rem; color: var(--text-muted);">
         Khush and Khwaish are safe. You are a loving mother.
       </p>
 
@@ -492,12 +492,10 @@
         <span id="pillExhale" class="breathe-step-pill">Exhale (8s)</span>
       </div>
 
-      <!-- Guiding Prompt -->
       <div id="breathePrompt" class="breathe-prompt">
         Inhale calm... Exhale blame.
       </div>
 
-      <!-- Action Buttons -->
       <div class="calm-action-btns">
         <button id="voiceToggleBtn" class="btn btn-secondary" onclick="toggleVoiceGuidance()">
           🔈 Voice Guide: OFF
@@ -509,35 +507,27 @@
     </div>
   </div>
 
-  <!-- Bottom Navigation Bar -->
+  <!-- CLEAN 5-BUTTON SPACIOUS BOTTOM NAVIGATION BAR -->
   <nav class="bottom-nav">
-    <button class="nav-item active" data-tab="sanctuary">
+    <button class="nav-item active" data-tab="calm" onclick="switchTab('calm')">
       <span class="nav-icon">🌸</span>
-      <span class="nav-label">Sanctuary</span>
+      <span class="nav-label">Calm</span>
     </button>
-    <button class="nav-item" data-tab="crying">
-      <span class="nav-icon">😭</span>
-      <span class="nav-label">Pamper/Cry</span>
-    </button>
-    <button class="nav-item" data-tab="joint">
-      <span class="nav-icon">🏡</span>
-      <span class="nav-label">Joint Family</span>
-    </button>
-    <button class="nav-item" data-tab="brain">
+    <button class="nav-item" data-tab="wisdom" onclick="switchTab('wisdom')">
       <span class="nav-icon">🧠</span>
-      <span class="nav-label">Brain Facts</span>
+      <span class="nav-label">Wisdom</span>
     </button>
-    <button class="nav-item" data-tab="health">
+    <button class="nav-item" data-tab="health" onclick="switchTab('health')">
       <span class="nav-icon">💊</span>
-      <span class="nav-label">Meds/Neb</span>
+      <span class="nav-label">Health</span>
     </button>
-    <button class="nav-item" data-tab="meals">
+    <button class="nav-item" data-tab="food" onclick="switchTab('food')">
       <span class="nav-icon">🍲</span>
       <span class="nav-label">Food</span>
     </button>
-    <button class="nav-item" data-tab="love">
+    <button class="nav-item" data-tab="love" onclick="switchTab('love')">
       <span class="nav-icon">❤️</span>
-      <span class="nav-label">Love Vault</span>
+      <span class="nav-label">Love</span>
     </button>
   </nav>
 
