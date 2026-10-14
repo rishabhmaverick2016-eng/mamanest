@@ -4,31 +4,125 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MamaNest • For Mama, Khush & Khwaish</title>
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json?v=2.2">
   <meta name="theme-color" content="#E07A5F">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.2">
+
+  <!-- Core Embedded Styles (Ensures 100% perfect UI even if browser caches external CSS) -->
+  <style>
+    .header-bar {
+      background: rgba(255, 255, 255, 0.96) !important;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(224, 122, 95, 0.15);
+      padding: 10px 14px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+    .brand-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #E07A5F, #F4A261);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      box-shadow: 0 4px 12px rgba(224, 122, 95, 0.25);
+      flex-shrink: 0;
+    }
+    .brand-titles h1 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #C45D42;
+      line-height: 1.1;
+      margin: 0;
+    }
+    .brand-titles p {
+      font-size: 0.74rem;
+      color: #6B7280;
+      margin: 2px 0 0 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .header-sos-btn {
+      background: linear-gradient(135deg, #E07A5F, #E76F51) !important;
+      color: white !important;
+      border: none !important;
+      outline: none !important;
+      padding: 8px 14px !important;
+      border-radius: 999px !important;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      cursor: pointer !important;
+      box-shadow: 0 3px 12px rgba(224, 122, 95, 0.4) !important;
+      flex-shrink: 0 !important;
+      white-space: nowrap !important;
+    }
+    .segmented-control {
+      display: flex !important;
+      background: #EDE6DF !important;
+      border-radius: 999px !important;
+      padding: 4px !important;
+      margin-bottom: 16px !important;
+      gap: 4px !important;
+      border: none !important;
+    }
+    .segmented-btn {
+      flex: 1 !important;
+      border: none !important;
+      outline: none !important;
+      background: transparent !important;
+      padding: 9px 12px !important;
+      border-radius: 999px !important;
+      font-weight: 600 !important;
+      font-size: 0.82rem !important;
+      color: #555 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      text-align: center !important;
+      box-shadow: none !important;
+    }
+    .segmented-btn.active {
+      background: #FFFFFF !important;
+      color: #C45D42 !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Sticky Header -->
+  <!-- Top Sticky Header (Sleek, 1-Line, Never Crammed) -->
   <header class="header-bar">
     <div class="brand-wrapper">
       <div class="brand-icon">🕊️</div>
       <div class="brand-titles">
         <h1>MamaNest</h1>
-        <p>Mama, Khush & Khwaish • With Love from Khushal</p>
+        <p>For Mama • With Love from Khushal</p>
       </div>
     </div>
-    <div class="header-right">
-      <span class="badge-twin badge-khush">👦 Khush</span>
-      <span class="badge-twin badge-khwaish">👧 Khwaish</span>
-      <!-- Instant 1-Tap SOS Button in Header (Never covers bottom buttons!) -->
-      <button class="header-sos-btn" onclick="openBreatheModal()" aria-label="Emergency Calm SOS">
-        <span>🧘‍♀️</span>
-        <span>SOS Calm</span>
-      </button>
-    </div>
+    
+    <!-- Instant 1-Tap SOS Button in Header (Always Accessible & Unobtrusive) -->
+    <button class="header-sos-btn" onclick="openBreatheModal()" aria-label="Emergency Calm SOS">
+      <span>🧘‍♀️</span>
+      <span>Take a Breath</span>
+    </button>
   </header>
 
   <!-- Main Container -->
@@ -39,12 +133,12 @@
       <div class="banner-icon">🎂</div>
       <div class="banner-content">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
-          <h3>Khush & Khwaish • Born January 2, 2025</h3>
-          <span style="background: #E07A5F; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 700;">
+          <h3>Khush 👦 & Khwaish 👧 • Born Jan 2, 2025</h3>
+          <span style="background: #E07A5F; color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">
             1 Year, 9 Months Old ✨
           </span>
         </div>
-        <p>
+        <p style="margin-top: 4px;">
           In the whole wide universe, they chose <strong>you</strong> as their mama. They will only be this little for a fleeting moment. You are so deeply blessed! ❤️
         </p>
       </div>
@@ -532,7 +626,7 @@
   </nav>
 
   <!-- Script Includes -->
-  <script src="audio.js"></script>
-  <script src="app.js"></script>
+  <script src="audio.js?v=2.2"></script>
+  <script src="app.js?v=2.2"></script>
 </body>
 </html>

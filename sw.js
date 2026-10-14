@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mamanest-v1';
+const CACHE_NAME = 'mamanest-v2.2';
 const ASSETS = [
   './',
   './index.html',
@@ -11,12 +11,12 @@ const ASSETS = [
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(ASSETS).catch(err => console.log('Cache install warn', err));
     })
   );
-  self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
@@ -33,7 +33,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Try network first, then cache
+  // Always fetch fresh network first, fallback to cache
   event.respondWith(
     fetch(event.request)
       .then(response => {
