@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MamaNest • For Mama, Khush & Khwaish</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#E07A5F">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="header-bar">
+    <div class="brand-wrapper">
+      <div class="brand-icon">🕊️</div>
+      <div class="brand-titles">
+        <h1>MamaNest</h1>
+        <p>Mama, Khush & Khwaish • With Love from Susheel</p>
+      </div>
+    </div>
+    <div class="twin-badges">
+      <span class="badge-twin badge-khush">👦 Khush</span>
+      <span class="badge-twin badge-khwaish">👧 Khwaish</span>
+    </div>
+  </header>
+
+  <!-- Floating Emergency Calm SOS Button -->
+  <button class="sos-floating-btn" onclick="openBreatheModal()" aria-label="Emergency Calm SOS">
+    <span>🧘‍♀️</span>
+    <span>SOS: Take a Breath</span>
+  </button>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- Lucky Mama & Birthday Reminder Card -->
+    <div class="compassion-banner" style="background: linear-gradient(135deg, #FFF3EB, #FDF0E6); border: 1.5px solid #F4A261;">
+      <div class="banner-icon">🎂</div>
+      <div class="banner-content">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+          <h3 style="color: var(--primary-dark); font-size: 1.05rem;">Khush & Khwaish • Born January 2, 2025</h3>
+          <span style="background: #E07A5F; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">
+            1 Year, 9 Months Old Today ✨
+          </span>
+        </div>
+        <p style="margin-top: 4px; font-size: 0.88rem; color: #4A4E69;">
+          Look at how tiny and soft they are. In the whole wide universe, they chose <strong>you</strong> as their mama. They will only be this little for a fleeting moment. You are so deeply blessed! ❤️
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- TAB 1: MAMA'S SANCTUARY & SOS RESET -->
+    <!-- ============================================== -->
+    <section id="section-sanctuary" class="tab-section active">
+      <div class="card">
+        <h2 class="card-title">🌸 Mama’s Emergency Nervous System Reset</h2>
+        <p class="card-subtitle">When your patience is zero and you feel about to yell or blame them.</p>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
+          <button class="btn btn-primary" onclick="openBreatheModal()" style="flex: 1; min-width: 200px;">
+            🫁 Open 4-7-8 Breathing Circle
+          </button>
+          <button class="btn btn-secondary" onclick="mamaAudio.playSingingBowl(240, 5)">
+            🔔 Play Calming Singing Bowl
+          </button>
+        </div>
+
+        <!-- 30-Second Grounding Protocol -->
+        <div style="background: #FFFDF9; border: 1px solid #EEDBC5; border-radius: 14px; padding: 16px; margin: 14px 0;">
+          <h4 style="color: var(--primary-dark); margin-bottom: 8px; font-size: 0.95rem;">
+            🛑 The 4-Step Rule (Before You Say a Word):
+          </h4>
+          <ol style="margin-left: 20px; font-size: 0.88rem; color: #444; line-height: 1.7;">
+            <li><strong>Step back 2 feet:</strong> Physically disconnect from the immediate mess or crying.</li>
+            <li><strong>Drop your shoulders & un-clench your jaw:</strong> Release the physical tension stored in your neck.</li>
+            <li><strong>Get down on your knees to their eye level:</strong> Standing over a 1-year-old feels like a giant roaring. Eye level brings instant safety.</li>
+            <li><strong>Whisper, don't lecture:</strong> Shouting scrambles their baby brain; a whisper makes them stop and listen.</li>
+          </ol>
+        </div>
+
+        <!-- Normalizing Wanting to Escape -->
+        <div class="overstimulation-box">
+          <h4>🕊️ “Why Do I Want to Escape and Avoid Them Sometimes?”</h4>
+          <p>
+            Mama, wanting to escape is <strong>not because you don’t love them</strong>. You have <strong>TWINS</strong>! Two toddlers crying, clinging, demanding, and dropping food is severe sensory overload. Your brain is desperately crying out for quiet. You are <em>touched out</em> and overstimulated. It is a biological survival signal, not a moral failure!
+          </p>
+        </div>
+
+        <!-- 15-Min Sanctuary Recharge -->
+        <div style="background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 18px; text-align: center; margin-top: 16px;">
+          <h4 style="font-size: 0.98rem; color: var(--text-dark);">⏳ Mama's Guilt-Free Sanctuary Timer</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 10px;">
+            Put Khush and Khwaish in a safe playpen or with Susheel. Take 15 minutes in silence with zero guilt.
+          </p>
+          <div id="sanctuaryTimerDisplay" style="font-size: 2.4rem; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums;">
+            15:00
+          </div>
+          <div style="display: flex; gap: 8px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
+            <button id="sanctuaryStartBtn" class="btn btn-primary" onclick="startSanctuaryTimer(15)">
+              ▶ Start 15-Min Sanctuary
+            </button>
+            <button class="btn btn-outline" onclick="startSanctuaryTimer(5)">5 Min</button>
+            <button class="btn btn-outline" onclick="startSanctuaryTimer(10)">10 Min</button>
+            <button class="btn btn-whatsapp" onclick="sendSusheelSOS()">
+              💬 Ping Susheel for Tag-Team
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 2: CRYING DECODER & PAMPERING GUIDE -->
+    <!-- ============================================== -->
+    <section id="section-crying" class="tab-section">
+      <div class="card">
+        <h2 class="card-title">😭 The Crying Decoder: Why Crying Angers Us & How to Pamper Them</h2>
+        <p class="card-subtitle">Understanding why they cry and why verbal orders never work.</p>
+
+        <!-- The Big Truth -->
+        <div class="crying-highlight">
+          <h3 style="color: #92400E; font-size: 1.05rem; margin-bottom: 6px;">
+            💡 Why saying “STOP CRYING!” makes them cry louder:
+          </h3>
+          <p style="font-size: 0.88rem; color: #78350F; line-height: 1.6;">
+            Khush and Khwaish are only 1 year & 9 months old. Their crying is an <strong>involuntary nervous system storm</strong>. They do not have an off-switch! When you tell them to stop, their baby brain hears rejection and distress, so their adrenaline spikes and they scream harder. They are not disobeying you—they literally <em>cannot</em> stop without your physical help.
+          </p>
+        </div>
+
+        <!-- Why Susheel Carrying Them Works -->
+        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px; padding: 16px; margin-bottom: 18px;">
+          <h4 style="color: #166534; font-size: 0.95rem; margin-bottom: 4px;">
+            ❤️ Why They Stop Crying When Papa Carries Them:
+          </h4>
+          <p style="font-size: 0.86rem; color: #14532D; line-height: 1.6;">
+            Notice how when Susheel picks them up and carries them, they quickly calm down? That is called <strong>Physical Co-Regulation</strong>! The chest-to-chest contact, heartbeat vibration, and gentle swaying releases oxytocin and calms their vagus nerve. Papa is not a “better parent”—he is simply using body-to-body touch instead of words. You have that exact same superpower, Mama!
+          </p>
+        </div>
+
+        <h3 style="font-size: 1rem; color: var(--primary-dark); margin: 18px 0 10px;">
+          🧸 6 Gentle Ways to Pamper Khush & Khwaish When They Cry:
+        </h3>
+
+        <!-- Pamper Card 1 -->
+        <div class="pamper-card">
+          <div class="pamper-icon">🐨</div>
+          <div class="pamper-info">
+            <h4>1. The Koala Chest Carry & Slow Sway</h4>
+            <p>Pick up Khush or Khwaish, place their head against your left collarbone (near your heartbeat), and sway slowly side-to-side (1 sway per second). Do not talk. Just hum softly.</p>
+          </div>
+        </div>
+
+        <!-- Pamper Card 2 -->
+        <div class="pamper-card">
+          <div class="pamper-icon">🤫</div>
+          <div class="pamper-info">
+            <h4>2. The Magic Curious Whisper</h4>
+            <p>Instead of raising your voice over their screams, drop down to an exaggerated whisper: <em>“Look... Mama found a secret tiny bug on the wall!”</em> Toddlers naturally halt their cries to strain and hear a whisper.</p>
+          </div>
+        </div>
+
+        <!-- Pamper Card 3 -->
+        <div class="pamper-card">
+          <div class="pamper-icon">🧊</div>
+          <div class="pamper-info">
+            <h4>3. The Cool Washcloth / Ice Cube Touch</h4>
+            <p>Run a small soft washcloth under cool water and gently wipe their hot forehead and little cheeks, or let them hold an ice cube. The sudden cold triggers the mammalian diving reflex, instantly resetting their crying loop!</p>
+          </div>
+        </div>
+
+        <!-- Pamper Card 4 -->
+        <div class="pamper-card">
+          <div class="pamper-icon">🪟</div>
+          <div class="pamper-info">
+            <h4>4. The Window / Balcony Sky Walk</h4>
+            <p>Carry them straight to a window, balcony, or front porch. Point outside: <em>“Look at the big tree blowing in the wind! Look at that red car!”</em> Fresh cool air and distant horizon vision immediately calms their sensory brain.</p>
+          </div>
+        </div>
+
+        <!-- Pamper Card 5 -->
+        <div class="pamper-card">
+          <div class="pamper-icon">🌯</div>
+          <div class="pamper-info">
+            <h4>5. The Twin Blanket Burrito & Gentle Massage</h4>
+            <p>Wrap Khush or Khwaish snugly in a soft warm blanket like a little burrito. Press gently along their arms and back with firm, comforting hands. Deep proprioceptive pressure relaxes muscles instantly.</p>
+          </div>
+        </div>
+
+        <!-- Pamper Card 6 -->
+        <div class="pamper-card">
+          <div class="pamper-icon">🪞</div>
+          <div class="pamper-info">
+            <h4>6. The Silly Big Mirror Reset</h4>
+            <p>Walk directly to the big bedroom mirror. Hold them up so they see their own teary face: <em>“Look at those little teardrops! Who is that handsome boy Khush? Who is that princess Khwaish?”</em> Make silly pufferfish faces together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 3: TODDLER BRAIN DECODER (From Instagram Photos) -->
+    <!-- ============================================== -->
+    <section id="section-brain" class="tab-section">
+      <div class="card">
+        <h2 class="card-title">🧠 Toddler Brain Decoder: Why They Do What They Do</h2>
+        <p class="card-subtitle">The science of toddlers under age 3: It is NOT defiance, it is brain development.</p>
+
+        <div class="brain-grid" id="brainWisdomGrid">
+          <!-- Populated by app.js from the 7 Instagram slides -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 4: TWINS HEALTH, VITAMINS & NEBULIZER -->
+    <!-- ============================================== -->
+    <section id="section-health" class="tab-section">
+      <div class="card">
+        <h2 class="card-title">💊 Khush & Khwaish Daily Health & Sick-Day Care</h2>
+        <p class="card-subtitle">Keep track of vitamins, teething, and soothing nebulizer sessions for colds.</p>
+
+        <!-- Twin Selector -->
+        <div class="twins-selector">
+          <button id="btnBoth" class="twin-btn both-active" onclick="selectTwin('both')">
+            👫 Both Twins
+          </button>
+          <button id="btnKhush" class="twin-btn" onclick="selectTwin('khush')">
+            👦 Khush
+          </button>
+          <button id="btnKhwaish" class="twin-btn" onclick="selectTwin('khwaish')">
+            👧 Khwaish
+          </button>
+        </div>
+
+        <!-- Daily Vitamins Checklist -->
+        <div id="healthChecklist">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- NEBULIZER & COLD CARE STATION -->
+        <div class="nebulizer-box">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <h3 style="color: var(--secondary); font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+              <span>🌬️</span>
+              <span>Nebulizer & Cold Care Fun Station</span>
+            </h3>
+            <span style="font-size: 0.78rem; background: #D0EBE3; color: #166534; padding: 2px 8px; border-radius: 10px; font-weight: 700;">
+              Distraction Game Included!
+            </span>
+          </div>
+          <p style="font-size: 0.85rem; color: #444; margin-top: 4px;">
+            Nebulizer mask can be scary for toddlers. Hand them the phone while you hold the mask so they can <strong>pop bubbles on the screen</strong> during their session!
+          </p>
+
+          <!-- Twin Selection for Nebulizer -->
+          <div style="margin: 12px 0; display: flex; gap: 10px; align-items: center;">
+            <label style="font-size: 0.85rem; font-weight: 600;">For:</label>
+            <select id="nebulizerTwinSelect" style="padding: 6px 12px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.88rem;">
+              <option value="khush">👦 Khush</option>
+              <option value="khwaish">👧 Khwaish</option>
+              <option value="both">👫 Both (Sequential)</option>
+            </select>
+            <select id="nebulizerDurationSelect" style="padding: 6px 12px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.88rem;">
+              <option value="5">5 Minutes</option>
+              <option value="8" selected>8 Minutes</option>
+              <option value="10">10 Minutes</option>
+            </select>
+          </div>
+
+          <!-- Interactive Bubble Pop Arena -->
+          <div class="nebulizer-game-arena" id="nebulizerArena" title="Tap the bubbles to pop them!">
+            <div style="position: absolute; top: 10px; left: 12px; font-size: 0.78rem; color: #666; pointer-events: none;">
+              🫧 Tap & pop bubbles to distract the twins! 🎈
+            </div>
+          </div>
+
+          <!-- Nebulizer Timer & Action Buttons -->
+          <div style="text-align: center;">
+            <div id="nebulizerTimer" class="timer-display">08:00</div>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+              <button id="nebulizerStartBtn" class="btn btn-secondary" onclick="startNebulizer(parseInt(document.getElementById('nebulizerDurationSelect').value))">
+                ▶ Start Nebulizer Fun Session
+              </button>
+              <button class="btn btn-outline" onclick="spawnBubble()">
+                🫧 Add More Bubbles
+              </button>
+            </div>
+          </div>
+
+          <!-- Mask Tricks -->
+          <div style="background: rgba(255,255,255,0.7); border-radius: 10px; padding: 12px; margin-top: 14px; font-size: 0.82rem; color: #333;">
+            <strong>💡 Nebulizer Comfort Hacks:</strong>
+            <ul style="margin-left: 18px; margin-top: 4px;">
+              <li>Pretend the mask is an <em>Astronaut Rocket Mask</em> traveling to the moon!</li>
+              <li>Let Khush or Khwaish hold the mask against their favorite teddy bear first.</li>
+              <li>Position the mask slightly away (blow-by mist) if the tight elastic strap causes terror.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sick Day Medicine Logger -->
+        <div style="background: #FFF8F6; border: 1px solid #FAD2C7; border-radius: 12px; padding: 16px;">
+          <h4 style="color: var(--primary-dark); font-size: 0.95rem; margin-bottom: 6px;">
+            📝 Log Sickness Medicine (Cough, Fever, Nasal Spray)
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+            <select id="medTwinSelect" style="padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.85rem;">
+              <option value="both">Both Khush & Khwaish</option>
+              <option value="khush">Khush only</option>
+              <option value="khwaish">Khwaish only</option>
+            </select>
+            <input id="medNameInput" type="text" placeholder="Medicine Name (e.g. Crocin, Saline)" style="padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.85rem;">
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <input id="medDoseInput" type="text" placeholder="Dose (e.g. 2.5ml / 2 drops)" style="flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #CCC; font-size: 0.85rem;">
+            <button class="btn btn-primary" onclick="logMedicineDose()" style="padding: 8px 16px;">
+              + Save Log
+            </button>
+          </div>
+
+          <div style="margin-top: 12px;">
+            <h5 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Recent Dose History:</h5>
+            <div id="medsHistoryList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 5: WHAT TO MAKE FOR THEM (MEALS & SNACKS) -->
+    <!-- ============================================== -->
+    <section id="section-meals" class="tab-section">
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 8px;">
+          <h2 class="card-title" style="margin-bottom: 0;">🍲 What to Make for Khush & Khwaish</h2>
+          <button class="btn btn-primary" onclick="pickRandomRecipe()" style="padding: 6px 14px; font-size: 0.82rem;">
+            🎲 Pick For Me (Tired Mama)
+          </button>
+        </div>
+        <p class="card-subtitle">Zero-stress, nutritious, quick toddler food that 1-year-olds actually love to eat!</p>
+
+        <!-- Category Filter Chips -->
+        <div class="filter-chips">
+          <button class="chip active" data-filter="all" onclick="filterRecipes('all')">All Ideas</button>
+          <button class="chip" data-filter="quick" onclick="filterRecipes('quick')">⚡ 5-Min Speedy</button>
+          <button class="chip" data-filter="meals" onclick="filterRecipes('meals')">🥣 Lunch & Dinner</button>
+          <button class="chip" data-filter="sick" onclick="filterRecipes('sick')">🤧 Cold & Sick Day</button>
+          <button class="chip" data-filter="finger" onclick="filterRecipes('finger')">✋ Twin Finger Foods</button>
+        </div>
+
+        <!-- Recipes List -->
+        <div id="recipesList">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 6: HOW LUCKY WE ARE (LOVE VAULT & SUSHEEL) -->
+    <!-- ============================================== -->
+    <section id="section-love" class="tab-section">
+      <div class="card">
+        <h2 class="card-title">❤️ The Love Vault: Remembering How Lucky We Are</h2>
+        <p class="card-subtitle">A sanctuary to remind your heart why you adore Khush & Khwaish.</p>
+
+        <!-- Dynamic Memory Grid -->
+        <div class="memory-grid" id="memoriesGrid">
+          <!-- Populated by app.js -->
+        </div>
+
+        <div style="text-align: center; margin: 16px 0;">
+          <button class="btn btn-outline" onclick="addCustomMemory()">
+            ✍️ Add a Sweet Memory or Cute Word Today
+          </button>
+        </div>
+
+        <!-- The Restraint Collapse Explanation for Spouses -->
+        <div style="background: #FDF4E7; border: 1.5px solid #F3C994; border-radius: 14px; padding: 18px; margin-top: 18px;">
+          <h4 style="color: #92400E; font-size: 1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+            <span>🤝</span>
+            <span>Why Mama Breaks Down When Papa Walks in the Door</span>
+          </h4>
+          <p style="font-size: 0.86rem; color: #6D3200; line-height: 1.6; margin-bottom: 8px;">
+            Child psychologists call this <strong>“Restraint Collapse”</strong>. All day long while Susheel is working, Mama carries the full weight of twin toddlers alone. She holds all her stress inside so the kids are safe and fed.
+          </p>
+          <p style="font-size: 0.86rem; color: #6D3200; line-height: 1.6;">
+            The moment Susheel walks in, Mama’s body senses <em>“My safe person is here”</em> and her nervous system finally drops its guard. The exhaustion spills over as irritability or wanting to escape. She is not ungrateful or mean—she is simply depleted to the bone.
+          </p>
+        </div>
+
+        <!-- Susheel's Love Note -->
+        <div class="husband-note">
+          <h3>💌 A Message From Susheel to My Wife:</h3>
+          <p>
+            “I know how relentlessly hard it is to care for Khush and Khwaish every single day. Taking care of twins is doing the work of two full-time jobs at once. When you feel tired, snappy, or overwhelmed, know that I see how hard you try and how much you love them.
+          </p>
+          <p style="margin-top: 8px;">
+            They were born on January 2, 2025, and having them with you is the greatest blessing of our lives. When you need a break, tell me. We are a team, always. You are the heartbeat of our little family.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================== -->
+  <!-- MODAL: 4-7-8 GUIDED BREATHING CIRCLE -->
+  <!-- ============================================== -->
+  <div id="breatheModal" class="breathe-modal">
+    <div class="breathe-dialog">
+      <button class="close-btn" onclick="closeBreatheModal()" aria-label="Close">✕</button>
+      
+      <h3 style="color: var(--primary-dark); font-size: 1.25rem; margin-bottom: 2px;">
+        🌸 Take a Breath, Mama
+      </h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">
+        Khush and Khwaish are safe. You are a loving mother.
+      </p>
+
+      <!-- Animated Breathing Circle -->
+      <div class="breathe-circle-wrapper">
+        <div id="breatheCircle" class="breathe-circle">
+          <div id="breatheInner" class="breathe-circle-inner">Breathe</div>
+        </div>
+      </div>
+
+      <!-- Breathing Phase Pills -->
+      <div class="breathe-step-pills">
+        <span id="pillInhale" class="breathe-step-pill active">Inhale (4s)</span>
+        <span id="pillHold" class="breathe-step-pill">Hold (7s)</span>
+        <span id="pillExhale" class="breathe-step-pill">Exhale (8s)</span>
+      </div>
+
+      <!-- Guiding Prompt -->
+      <div id="breathePrompt" class="breathe-prompt">
+        Inhale calm... Exhale blame.
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="calm-action-btns">
+        <button id="voiceToggleBtn" class="btn btn-secondary" onclick="toggleVoiceGuidance()">
+          🔈 Voice Guide: OFF
+        </button>
+        <button class="btn btn-outline" onclick="closeBreatheModal()">
+          I Feel Calmer Now 🕊️
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-tab="sanctuary">
+      <span class="nav-icon">🌸</span>
+      <span class="nav-label">Sanctuary</span>
+    </button>
+    <button class="nav-item" data-tab="crying">
+      <span class="nav-icon">😭</span>
+      <span class="nav-label">Pamper/Cry</span>
+    </button>
+    <button class="nav-item" data-tab="brain">
+      <span class="nav-icon">🧠</span>
+      <span class="nav-label">Brain Facts</span>
+    </button>
+    <button class="nav-item" data-tab="health">
+      <span class="nav-icon">💊</span>
+      <span class="nav-label">Meds/Neb</span>
+    </button>
+    <button class="nav-item" data-tab="meals">
+      <span class="nav-icon">🍲</span>
+      <span class="nav-label">Food Ideas</span>
+    </button>
+    <button class="nav-item" data-tab="love">
+      <span class="nav-icon">❤️</span>
+      <span class="nav-label">Love Vault</span>
+    </button>
+  </nav>
+
+  <!-- Script Includes -->
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
