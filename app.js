@@ -1,6 +1,6 @@
 /**
  * MamaNest - Core Application Logic
- * For Mama, Khush & Khwaish • With Love from Susheel
+ * For Mama, Khush & Khwaish • With Love from Khushal
  */
 
 // State Management
@@ -386,10 +386,10 @@ function updateSanctuaryDisplay() {
   }
 }
 
-// Susheel Tag-Team Message Generator
-function sendSusheelSOS() {
+// Khushal Tag-Team Message Generator
+function sendKhushalSOS() {
   const message = encodeURIComponent(
-    "Hi Susheel ❤️ Twins (Khush & Khwaish) have overwhelmed my energy cup today. Could you please take over for 15-20 minutes when you can so I can step back and reset? Love you!"
+    "Hi Khushal ❤️ Twins (Khush & Khwaish) and the house have overwhelmed my energy cup today. Could you please take over for 15-20 minutes so I can step back into our room and reset? Love you!"
   );
   window.open(`https://wa.me/?text=${message}`, '_blank');
 }
